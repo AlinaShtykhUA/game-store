@@ -1,0 +1,37 @@
+.game-card{
+  width: 100%;
+  max-width: 320px;
+  border-radius: 15px;
+  color: #fff;
+  background-color: #242529;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 5px 5px 25px 5px #000000;
+}
+
+.game-card__details{
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.game-card__title{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  font-style: italic;
+}
+
+.game-card__genres{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+  justify-content: center;
+}
+
+.game-card__buy{
+  position: absolute;
+  right: 15px;
+  bottom: -15px;
+  z-index: 10;
+}

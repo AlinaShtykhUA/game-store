@@ -1,0 +1,20 @@
+.header{
+  padding: 1.2rem 0;
+}
+
+.header__inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  font-size: 34px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: text-shadow .2s ease-in-out;
+}
+
+.logo:hover{
+  text-shadow: 4px 3px 0px #CE000E;
+}
