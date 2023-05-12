@@ -3,9 +3,19 @@
   align-items: center;
   cursor: pointer;
 }
+
+
 .cart-block__total-price{
   margin-left: 5px;
   font-size: 16px;
   font-weight: bold;
   font-style: italic;
+}
+
+.cart-block__icon{
+  transition: all .2s ease-in-out;
+}
+
+.cart-block:hover .cart-block__icon{
+  color: #CE000E;
 }
