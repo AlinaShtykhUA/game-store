@@ -4,12 +4,16 @@ import {
   Routes
 } from "react-router-dom";
 
-import { Header } from "./components/header"
-import { HomePage } from "./pages/home-page"
+import { Provider } from "react-redux";
+import { store } from "./redux";
+
+import { Header } from "./components/header";
+import { HomePage } from "./pages/home-page";
 
 function App() {
   return (
-    <Router>
+    <Provider store={store}>
+      <Router>
         <div className="App">
           <Header />
           
@@ -17,7 +21,9 @@ function App() {
             <Route index element={<HomePage />} />
           </Routes>
         </div>
-    </Router>
+      </Router>
+    </Provider>
+    
   )
 }
 
