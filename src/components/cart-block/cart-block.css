@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  position: relative;
 }
 
 
 .cart-block__total-price{
-  margin-left: 5px;
+  margin-left: 10px;
   font-size: 16px;
   font-weight: bold;
   font-style: italic;

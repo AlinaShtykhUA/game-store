@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { RiShoppingCartLine } from "react-icons/ri";
 
 import { useSelector } from "react-redux";
 
+import { calcTotalPrice } from "../utils";
+
 import { CartMenu } from "../cart-menu";
+import {ItemsInCart} from "../items-in-cart"
 import './cart-block.css'
 
 export const CartBlock = () => {
+  const [isCartMenuVisible, setIsCartMenuVisible] = useState(false)
   const items = useSelector(state => state.cart.itemsInCart)
   
-  const totalPrice = items.reduce((acc, game) => acc += game.price, 0)
+  const totalPrice = calcTotalPrice(items)
   return(
     <div className="cart-block">
-      <RiShoppingCartLine className="cart-block__icon" size={28}/>
-      <span className="cart-block__total-price">{totalPrice} USD</span>
-      <CartMenu />
+      <ItemsInCart quantity={items.length} />
+      <RiShoppingCartLine className="cart-block__icon" size={28} onClick={() => setIsCartMenuVisible(!isCartMenuVisible)} />
+
+      {totalPrice > 0 ? <span className="cart-block__total-price">{totalPrice} USD</span> : null}
+
+      {isCartMenuVisible && <CartMenu onClick={() => null} />}
     </div>
   )
 }

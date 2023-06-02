@@ -1,25 +1,32 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-import {setItemInCart} from '../../redux/cart/reducer'
+import {deleteItemFromCart, setItemInCart} from '../../redux/cart/reducer'
 
 import { Button } from '../button'
 import './game-buy.css'
 
 export const GameBuy = ({ game }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const items = useSelector(state => state.cart.itemsInCart);
+  const isItemInCart = items.some(item => item.id === game.id);
+
   const hundleClick = (event) => {
     event.stopPropagation()
 
-    dispatch(setItemInCart(game))
+    if(isItemInCart){
+      dispatch(deleteItemFromCart(game.id))
+    } else {
+      dispatch(setItemInCart(game))
+    }
   }
   return(
     <div className="game-buy">
       <span className="game-buy__price">{game.price} USD</span>
       <Button
-        type="primary"
+        type={isItemInCart ? "secondary" : "primary"}
         onClick={hundleClick}
       >
-        Add to Basket
+        {isItemInCart ? 'Delete from Basket' : 'Add to Basket'}
       </Button>
     </div>
   )
