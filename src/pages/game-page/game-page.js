@@ -16,16 +16,22 @@ export const GamePage = () => {
 
       <div className="game-page__content">
         <div className="game-page__video">
-          <iframe width="90%" height="400px" src={game.video} title="Youtube video player" ></iframe>
+          <iframe width="100%" height="400px" src={game.video} frameBorder="0" title="Youtube video player" ></iframe>
         </div>
 
         <div className="game-page__about">
           <GameCover image={game.image} />
           <p className="game-page__about-description">{game.description}</p>
-          <p className="game-page__about-genres">Popular genres of this product:</p>
-          {game.genres.map((genre) => (
+
+          
+          <p className="scondary-text">Popular genres of this product:</p>
+
+          <div className="game-page__about-genre">
+            {game.genres.map((genre) => (
             <GameGenre genre={genre} key={genre} />
-          ))}
+            ))}
+          </div>
+          
 
           <div className="game-page__buy"><GameBuy game={game}/></div>
         </div>
