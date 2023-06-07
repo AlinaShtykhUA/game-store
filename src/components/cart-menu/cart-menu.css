@@ -1,14 +1,14 @@
 .cart-menu{
   position: absolute;
-  top: 40px;
-  left: -250px;
+  top: 60px;
+  right: -20px;
   background-color: hsl(228, 6%, 15%);
   padding: 20px;
   border-radius: 15px;
-  width: 320px;
+  max-width: 320px;
+  width: 100%;
   box-shadow: 5px 5px 25px 5px #000000;
   z-index: 9999;
-  margin: 0 10px;
 }
 
 .cart-menu__game-list{

@@ -1,4 +1,4 @@
-import forza5 from '../../assets/game-covers/ForzaHorizon5.webp'
+import forza5 from '../../assets/game-covers/forza5.jpeg'
 import battlefield2042 from '../../assets/game-covers/Battlefield2042.webp'
 import lifeisstrangetruecolors from '../../assets/game-covers/LifeisStrangeTrueColors.webp'
 import gta5 from '../../assets/game-covers/Gta5.webp'
