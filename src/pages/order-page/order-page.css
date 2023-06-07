@@ -1,0 +1,38 @@
+.order-page{
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+.order-page__left{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 15px;
+}
+
+.order-page__right{
+    width: 30%;
+    font-size: 18px;
+    font-weight: bold;
+    border-left: 1px solid #cecece;
+    padding-left: 15px;
+}
+
+@media (max-width: 991px){
+  .order-page{
+    flex-direction: column;
+  }
+  .order-page__left{
+    width: 100%;
+  }
+  
+  .order-page__right{
+      width: 100%;
+      border: none;
+      padding: 0;
+      margin-top: 15px;
+  }
+
+}
+
